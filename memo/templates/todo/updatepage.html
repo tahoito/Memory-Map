@@ -1,0 +1,35 @@
+{% extends './base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<style>
+    .update-button{
+        width: 160px;
+        min-height: 46px;
+        background-color: #f5d4da;
+        font-size: 18px;
+        font-family: monospace;
+        color: #000000 ;
+        line-height: 38px;
+        border: none;
+        border-radius: 40px;
+        position: absolute;
+        left: 100px;
+        bottom: 150px;
+    }
+</style>
+<h1>編集する</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>{{ form.time.label }}</label>
+        {% render_field form.time class+="form-control w-25 mb-4" %}
+    </div>
+    <div class="form-group">
+        <label>{{ form.memo.label }}</label>
+        {% render_field form.memo class+="form-control w-25 mb-4" %}
+    </div>
+    <div>
+        <input class="update-button div" type="submit" value="更新する">
+    </div>
+</form>
+{% endblock %}

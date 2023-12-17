@@ -1,0 +1,24 @@
+{% extends './base.html' %}
+{% block content %}
+<style>
+  .btn {
+      background-color:#f5d4da;
+      border-radius: 40px;
+
+}
+</style>
+<div class="bg-light p-3 p-sm-5 mb-4 border-top">
+    <div class="container">
+      <h1 class="display-4"><u><i>Memory Map</i></u></h1>
+      <p>あなたの<i><u>Memory</u></i>を記録して、あなただけの<u><i>Map</i></u>を作りませんか</p>
+      <hr class="my-4">
+      <a class="btn btn-light btn-lg" href="{% url 'spdiary:create' %}" role="button">日記を作成する</a>
+      <a class="btn btn-light btn-lg" href="{% url 'spdiary:createpage' %}" role="button">Todoを作成する</a>
+    </div>
+</div>
+
+<a href="{% url 'spdiary:list' %}">日記一覧を表示する</a>
+<a href="{% url 'spdiary:listpage' %}">Todoリスト一覧を見る</a>
+
+
+{% endblock %}

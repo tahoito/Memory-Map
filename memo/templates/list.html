@@ -1,0 +1,23 @@
+{% extends './base.html' %}
+{% block content %}
+<body>
+<h1>日記一覧</h1> 
+
+<div class="container">
+    <form action="" method="get">
+    <ul>
+      <input name="tag" value="{{ request.GET.tag }}" type="text" />
+      <button type="submit">検索する</button>
+    </form>
+
+    {% for diary in diary_list %}
+    <div class="card my-3" style="width: 40rem;">
+        <div class="card-header"><strong>タイトル: <a href="{% url 'spdiary:detail' diary.id %}">{{diary.title}}</a></strong></div>
+            <div class="card-body">{{ diary.date|date:" m月d日" }}</div>
+            <div class="card-body">{{ diary.text|truncatechars_html:20|linebreaksbr}}</div>
+    </div>
+    {% endfor %}
+    </ul>
+</div>
+</body>
+{% endblock %}

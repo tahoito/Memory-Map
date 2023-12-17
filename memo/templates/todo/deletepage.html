@@ -1,0 +1,26 @@
+{% extends './base.html' %}
+{% block content %}
+<style>
+    .delete-button{
+        width: 160px;
+        min-height: 46px;
+        background-color: #f5d4da;
+        font-size: 18px;
+        font-family: monospace;
+        color: #000000 ;
+        line-height: 38px;
+        border: none;
+        border-radius: 40px;
+        position: absolute;
+        left: 100px;
+        bottom: 150px;
+    }
+</style>
+<h1>削除画面</h1>
+<form action="" method="POST"> {% csrf_token %}
+    <p>
+        <u>{{ object.memo }}</u>を削除します
+    </p>
+    <input class="delete-button div" type="submit" value="削除する">
+</form>
+{% endblock %}
