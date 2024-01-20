@@ -3,7 +3,8 @@
 
 ### 🌱 1. What you can do with "Memory Map" <br>
   ・ You can write your diary and list that you have to do today(=Todo list)<br>
-  ・ You can update and delete your diary and list<br> 
+  ・ And you also can take the photo records.<br>
+  ・ You can update and delete your diary, list and photo<br>
   ・ It has a list so, you can look back on past diaries<br>
   ・ If you write #'word' in your diary, you can serch about past daiaries<br>
   ・ Todo list don't have to record, so you cannnot serch about past list<br>
