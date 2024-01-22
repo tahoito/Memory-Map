@@ -1,0 +1,120 @@
+{% extends './base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<style>
+    .date{/*日付ボックス*/
+        width: 250px;
+        min-height: 46px;
+        background-color: #b8f7c7;
+        border: none;
+        border-radius: 20px;
+        position: absolute;
+        left: 10%;
+        top: 15%;
+        font-size: 20px;
+    }
+    #id_tagname{
+        background-color:#b8f7c7;
+        width: 400px;
+        position: absolute;
+        min-height: 46px;
+        border: none;
+        border-radius: 20px;
+        left: 10%;
+        top: 27%;
+        font-size: 20px;
+    }
+    #id_title{
+        background-color:#b8f7c7;
+        width: 450px;
+        position: absolute;
+        min-height: 46px;
+        border: none;
+        border-radius: 20px;
+        left: 10%;
+        top: 38%;
+        font-size: 20px;
+    }
+    #id_text{
+        background-color:#b8f7c7;
+        width: 600px;
+        position: absolute;
+        min-height: 100px;
+        border: none;
+        border-radius: 20px;
+        left: 10%;
+        top: 50%;
+        font-size: 20px;
+    }
+    .update-button{
+        width: 170px;
+        min-height: 46px;
+        background-color: #b8f7c7;
+        font-size: 18px;
+        font-family: monospace;
+        color: #000000 ;
+        line-height: 38px;
+        border: none;
+        border-radius: 20px;
+        position: absolute;
+        left: 70%;
+        bottom: 35%;
+    }
+    .back{
+        width: 170px;
+        min-height: 46px;
+        background-color: #b8f7c7;
+        font-size: 18px;
+        font-family: monospace;
+        line-height: 38px;
+        border: none;
+        border-radius: 20px;
+        position: absolute;
+        left: 70%;
+        bottom: 25%;
+    }
+    .yohaku1{
+        margin:0px 40px;
+    }
+
+</style>
+<form action="" method="POST">
+    {% csrf_token %}
+    <!--<div class="form-group">
+        <label>{{ form.date.label }}</label>
+        {% render_field form.date class+="form-control w-25 mb-4" %}
+    </div>
+    <div class="form-group">
+        <label>{{ form.title.label }}</label>
+        {% render_field form.title class+="form-control w-25 mb-4" %}
+    </div>
+    <div class="form-group">
+        <label>{{ form.tagname.label }}</label>
+        {% render_field form.tagname class+="form-control w-25 mb-4" %}
+    </div>   
+    <div class="form-group">
+        <label>{{ form.text.label }}</label>
+        {% render_field form.text class+="form-control w-25 mb-4" %}
+    </div>-->
+    <div class="form-group mb-3">
+        <label for="formGroupExampleInput"></label>
+        {{ form.date|add_class:"date"}}
+    </div>
+    <div class="form-group mb-3">
+        <label for="formGroupExampleInput"></label>
+        {{ form.title|add_class:"title"}}
+    </div>
+    <div class="form-group mb-3">
+        <label for="formGroupExampleInput"></label>
+        {{ form.tagname|add_class:"tagname"}}
+    </div>
+    <div class="form-group mb-3">
+        <label for="formGroupExampleInput"></label>
+        {{ form.text|add_class:"text"}}
+    <div>
+    <div>
+        <input class="update-button div" type="submit" value="更新する">
+    </div>
+</form>
+<a class="back" href="{% url 'spdiary:list'  %}"><span class="yohaku1">戻る →</span></a>
+{% endblock %}

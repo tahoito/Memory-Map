@@ -1,0 +1,149 @@
+@media screen and (-webkit-min-device-pixel-ratio:0){
+
+.border {
+    padding-top: 13%;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    width: 50%;
+    margin-left: auto; /* 中央寄せにするため */
+    margin-right: auto; 
+}
+   
+.memo{
+    position:absolute;
+    padding-top:2%;
+    font-size:15px;
+    font-family: monospace;
+    color:rgb(0, 0, 0);
+    left: 50%;
+    z-index:555;
+    transform: translateX(-50%);
+}
+
+.check{
+    position:absolute;
+    padding-top: 446px; 
+    left:470px;
+    color:rgb(0, 0, 0);
+    font-size:10px;
+    z-index:34;
+    font-family: monospace;
+
+}
+
+.welcome{
+    position:absolute;
+    padding-top: 100px; 
+    left: 50%;
+    transform: translateX(-50%);
+    color:rgb(0, 0, 0);
+    font-size:40px;
+    z-index:999;
+    font-family: regular;
+}
+
+
+.username-font {
+    background-color:#ffffff;
+    width: 450px;
+    min-height: 46px;
+    font-size: 17px;/*フォントサイズ*/
+    font-family: monospace;/*字体*/
+    line-height: 38px;
+    color: #000000 ;
+    border: none;
+    border-radius: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 37%;/*上辺からの距離*/
+}
+
+
+.username{
+    font-size: 20px;/*フォントサイズ*/
+    font-family: monospace;/*字体*/
+    position: absolute;
+    left: 43%;/*左辺からの距離*/
+    top: 38%;/*上辺からの距離*/
+    background-color:#ffffff;    
+}
+
+.password-font {
+    width: 450px;
+    min-height: 46px;
+    font-size: 17px;
+    font-family: monospace;
+    line-height: 38px;    
+    color: #000000 ;
+    border: none;
+    border-radius: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom:45%;
+    background-color:#ffffff;
+}
+
+
+.password {
+    background-color: #ffffff;
+    font-size: 20px;
+    font-family: monospace;
+    position: absolute;
+    left: 42%;
+    bottom: 46%;
+}
+
+.again-password-font {
+    width: 450px;
+    min-height: 46px;
+    font-size: 17px;
+    font-family: monospace;
+    line-height: 38px;    
+    color: #000000 ;
+    border: none;
+    border-radius: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom:34%;
+    background-color:#ffffff;
+}
+
+
+.again-password {
+    background-color: #ffffff;
+    font-size: 20px;
+    font-family: monospace;
+    position: absolute;
+    left: 43%;
+    bottom: 35%;
+}
+
+
+.signup-button {
+    width: 300px;
+    min-height: 46px;
+    background-color: #ffffff;
+    font-size: 20px;
+    font-family: monospace;
+    color: #000000 ;
+    border: none;
+    border-radius: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20%;
+}
+
+
+
+.navbar {
+    background-color: #fb96be;
+}
+
+.yohaku{
+	margin:0px 160px;
+}
+
+}

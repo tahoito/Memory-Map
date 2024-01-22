@@ -1,0 +1,131 @@
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.navbar {
+    background-color: #fb96be;
+}
+
+
+.border {
+    padding-top: 13%;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    width: 50%;
+    margin-left: auto; /* 中央寄せにするため */
+	margin-right: auto; 
+    }
+
+
+.welcome{
+    position:absolute;
+    padding-top: 100px; 
+    left: 50%;
+    transform: translateX(-50%);
+    color:rgb(0, 0, 0);
+    font-size:40px;
+    z-index:999;
+    font-family: regular;
+}
+
+.username-font {
+    background-color:#ffffff;
+    width: 450px;
+    min-height: 46px;
+    font-size: 17px;/*フォントサイズ*/
+    font-family: monospace;/*字体*/
+    line-height: 38px;
+    color: #000000 ;
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;/*左辺からの距離*/
+    transform: translateX(-50%);
+    top: 38%;/*上辺からの距離*/
+}
+
+
+.username{
+    font-size: 20px;/*フォントサイズ*/
+    font-family: monospace;/*字体*/
+    position: absolute;
+    left: 40%;/*左辺からの距離*/
+    top: 39%;/*上辺からの距離*/
+    background-color:#ffffff;    
+}
+
+
+.password-font {
+    width: 450px;
+    min-height: 46px;
+    font-size: 17px;
+    font-family: monospace;
+    line-height: 38px;    
+    color: #000000 ;
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 43%;/*下辺からの距離*/
+    background-color:#ffffff;
+}
+
+
+.password {
+    background-color: #ffffff;
+    font-size: 20px;
+    font-family: monospace;
+    position: absolute;
+    left: 42%;
+    bottom: 44%;
+}
+
+
+.login-button {
+    width: 350px;
+    min-height: 46px;
+    background-color: #ffffff;
+    font-size: 20px;
+    font-family: monospace;
+    color: #000000 ;
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25%;
+}
+
+
+.error-massage {
+    font-family: sans-serif;
+    position: absolute;
+    bottom: 20px;
+    font-size: 15px;
+}
+
+.signup {
+    width: 350px;
+    min-height: 46px;
+    background-color: #ffffff;
+    font-size: 15px;
+    font-family: monospace;
+    color: #000000 ;
+    line-height: 38px;
+    border: none;
+    border-radius: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15%;
+}
+
+
+
+
+
+.yohaku{
+	margin:4px 80px;
+}
+
+.yohaku1{
+	margin:0px 80px;
+}
+}

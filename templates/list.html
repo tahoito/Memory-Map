@@ -1,0 +1,127 @@
+{% extends './base.html' %}
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+<body>
+
+<style>
+  input[name="tag" ]{
+    background-color: #FFF ;
+    left:67%;
+    position: absolute;
+    font-size:21px;
+    border-radius: 10px;
+    top:19%;
+  }
+  .button{/*検索フォーム*/
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    margin: 1em 0; /* 前後の隙間 */
+    padding: 0.6em 1em; /* 塗りの余白 */
+    font-size: 1em; /* フォントサイズ */
+    background-color: #9dc5a8; ; /* 背景色 */
+    border: 0; /* 枠線を消す */
+    transition: 0.3s; /* ホバーの変化を滑らかに */
+    left:88.4%;
+    position: absolute;
+    border-radius: 10px; 
+    top:16.5%;
+
+  }
+  .button:hover {/*検索ボタン*/
+  background-color: #7d9f87; ; /* 背景色 */
+}
+
+  .fake-box{/*リストのボックス*/
+    background-color: #b8f7c7; ;
+    position: absolute;
+    left: 65.7%;
+    top: 15%;
+    width: 400px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+  .list{/*リストの内容*/
+    position:absolute;
+    padding-top: 80px; 
+    left:450px;
+    color:rgb(0, 0, 0);
+    font-size:30px;
+    z-index:999;
+    font-family: monospace;
+  }
+  .card-header{/*リスト*/
+    position:absolute;
+    color:rgb(0, 0, 0);
+    font-size:18px;
+    z-index:999;
+    font-family: monospace;
+    background-color: #ffffff ;
+    width: 450px;
+    height: 40px;
+  }
+
+
+  .create{/*新規作成ボタン*/
+    position:absolute;
+    background-color:#89f985;
+    border-radius: 20px;
+    left:72%;
+    bottom:35%;
+    font-size:18px;
+    font-family: monospace;
+    width: 210px;
+    line-height: 38px;
+    min-height: 48px;
+  }
+  .photo{
+    border: none;
+    position:absolute;
+    background-color:#bbf9c9;
+    border-radius: 20px;
+    left:72%;
+    bottom:23%;
+    font-size:18px;
+    font-family: monospace;
+    width: 210px;
+    line-height: 38px;
+    min-height: 46px;
+  }
+  .yohaku{/*余白*/
+	margin:4px 40px;
+  }
+
+
+</style>
+<div class="fake-box"></div>
+
+<body>
+  <div class="big-box"></div>
+  <div class="bg-light p-3 p-sm-5 mb-4 border-top">
+    <div class="container">
+      <h1 class="display-6">Welcome to "Memory Map"</h1>
+      <p style="font-size:20px; padding-left:30%;">- DIARY -</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <form action="" method="get">
+      <input name="tag" value="{{ request.GET.tag }}" type="text" />
+      <button type="submit"class="button">検索する</button>
+    </form>
+
+    <ul>
+    {% for diary in diary_list %}
+    <div class="card my-5" style="width: 40rem;height: 150px; border-radius: 20px; background-color: #b8f7c7;">
+        <div class="card-header" style="border-radius: 40px; top:10%; left:5%;"><strong>タイトル:<a href="{% url 'spdiary:detail' diary.id %}">{{diary.title}}</a></strong></div>
+        <div class="card-body" style="position:absolute; left:5%; top:40%; font-size:15px; font-family: monospace;">{{ diary.date|date:" m月d日" }}<br>{{ diary.text|truncatechars_html:30|linebreaksbr}}</div>
+    </div>
+    {% endfor %}
+    </ul>
+  </div>
+  <a class="create" href="{% url 'spdiary:create' %}"><span class="yohaku">新規作成 →</span></a>
+  <a class="photo" href="{% url 'spdiary:image' %}"><span class="yohaku">写真追加 →</span></a>
+</body>
+{% endblock %}
