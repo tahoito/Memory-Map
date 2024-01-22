@@ -1,0 +1,99 @@
+{% extends './base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<style>
+    .button{/*作成ボタン*/
+        width: 170px;
+        min-height: 46px;
+        background-color: #b8f7c7;
+        font-size: 18px;
+        font-family: monospace;
+        color: #000000 ;
+        line-height: 38px;
+        border: none;
+        border-radius: 20px;
+        position: absolute;
+        left: 70%;
+        bottom: 35%;
+    }
+    .back{
+        width: 170px;
+        min-height: 46px;
+        background-color: #b8f7c7;
+        font-size: 18px;
+        font-family: monospace;
+        line-height: 38px;
+        border: none;
+        border-radius: 20px;
+        position: absolute;
+        left: 70%;
+        bottom: 25%;
+    }
+
+    #id_time{ 
+        background-color: #b8f7c7;
+        left:28%;
+        top:42.9%;
+        width: 200px;
+        position: absolute;
+    }
+    #id_memo{
+        background-color:#b8f7c7;
+        left:25%;
+        top:58.9%;
+        width: 300px;
+        position: absolute;
+        border-radius: 20px;
+        font-size: 20px;
+    }
+    .yohaku1{
+        margin:0px 40px;
+    }
+    .big{
+        background-color: #b8f7c7;
+        position: absolute;
+        left:25%;
+        top: 42%;
+        width: 300px;
+        height: 50px;
+        border-radius: 20px;
+    }
+
+    .tome{
+        background-color: #b8f7c7;
+        position: absolute;
+        left:15%;
+        top: 30%;
+        width: 650px;
+        height: 350px;
+        border-radius: 20px;
+        opacity: 0.3;
+    }
+
+</style>
+
+<div class="tome"></div>
+<div class="big"></div>
+<form method="post">
+    {% csrf_token %}
+    <!--<div class="form-group" style="padding-left:20%; padding-top:10%;z-index: 999;">
+        <label>{{ form.time.label }}</label>
+        {% render_field form.time class+="form-control w-25 mb-4" %}
+    </div>
+    <div class="form-group"style="padding-left:20%; padding-top:3%;">
+        <label>{{ form.memo.label }}</label>
+        {% render_field form.memo class+="form-control w-50 mb-4" %}
+    </div>-->
+        <div class="form-group mb-3">
+            <label for="formGroupExampleInput"></label>
+            {{ form.time|add_class:"time"}}
+        </div>
+        <div class="form-group mb-3">
+            <label for="formGroupExampleInput"></label>
+            {{ form.memo|add_class:"memo"}}
+        </div>
+    <input class="button div" type="submit" value="追加する →">
+</form>
+<a class="back" href="{% url 'spdiary:listpage'  %}"><span class="yohaku1">戻る →</span></a>
+
+{% endblock %}

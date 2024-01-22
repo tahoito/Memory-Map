@@ -1,0 +1,150 @@
+{% extends './base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<style>
+    .button{
+        width: 170px;
+        min-height: 46px;
+        background-color: #b8f7c7;
+        font-size: 18px;
+        font-family: monospace;
+        color: #000000 ;
+        line-height: 38px;
+        border: none;
+        border-radius: 20px;
+        position: absolute;
+        left: 70%;
+        bottom: 35%;
+    }
+    .back{
+        width: 170px;
+        min-height: 46px;
+        background-color: #b8f7c7;
+        font-size: 18px;
+        font-family: monospace;
+        line-height: 38px;
+        border: none;
+        border-radius: 20px;
+        position: absolute;
+        left: 70%;
+        bottom: 25%;
+    }
+    .yohaku1{
+        margin:0px 40px;
+    }
+
+    .date{/*日付ボックス*/
+        width: 250px;
+        min-height: 46px;
+        background-color: #b8f7c7;
+        border: none;
+        border-radius: 20px;
+        position: absolute;
+        left: 10%;
+        top: 15%;
+        font-size: 20px;
+    }
+    .tag-box{
+        color: #000000;
+        position: absolute;
+        left:10%;
+        top: 26%;
+    }
+    .date-box{
+        position: absolute;
+        color:#000000;
+        left:10%;
+        top:12%;
+    }
+    .text-box{/*背景のボックス*/
+        color: #000000;
+        position: absolute;
+        left:10%;
+        top: 49%;
+    }
+    .small{
+        color: #000000;
+        position: absolute;
+        left:10%;
+        top: 37%;
+    }
+    #id_tagname{
+        background-color:#b8f7c7;
+        width: 400px;
+        position: absolute;
+        min-height: 46px;
+        border: none;
+        border-radius: 20px;
+        left: 10%;
+        top: 30%;
+        font-size: 20px;
+    }
+    #id_title{
+        background-color:#b8f7c7;
+        width: 450px;
+        position: absolute;
+        min-height: 46px;
+        border: none;
+        border-radius: 20px;
+        left: 10%;
+        top: 40%;
+        font-size: 20px;
+    }
+    #id_text{
+        background-color:#b8f7c7;
+        width: 600px;
+        position: absolute;
+        min-height: 250px;
+        border: none;
+        border-radius: 20px;
+        left: 10%;
+        top: 53%;
+        font-size: 15px;
+    }
+</style>
+    <div class="date"></div>
+    <div class="date-box">日付</div>
+    <div class="small">タイトル</div>
+    <div class="tag-box">ハッシュタグ機能(#の後にタグ名を記入) </div>
+    <div class="text-box">日記</div>
+    <form method="post">    
+        {% csrf_token %}
+        <!--<div class="form-group">
+            <label>{{ form.date.label }}</label>
+            {% render_field form.date class+="form-control w-25 mb-4" %}
+        </div>
+        <div class="form-group">
+            <label>{{ form.title.label }}</label>
+            {% render_field form.title class+="form-control w-25 mb-4" %}
+        </div>
+        <div class="form-group">
+            <label>{{ form.tagname.label }}</label>
+            {% render_field form.tagname class+="form-control w-25 mb-4" %}
+        </div>
+        <div class="form-group">
+            <label>{{ form.text.label }}</label>
+            {% render_field form.text class+="form-control w-50 mb-4" %}
+        </div>-->
+        <div class="form-group mb-3">
+            <label for="formGroupExampleInput"></label>
+            {{ form.date|add_class:"date"}}
+        </div>
+        <div class="form-group mb-3">
+            <label for="formGroupExampleInput"></label>
+            {{ form.title|add_class:"title"}}
+        </div>
+        <div class="form-group mb-3">
+            <label for="formGroupExampleInput"></label>
+            {{ form.tagname|add_class:"tagname"}}
+        </div>
+        <div class="form-group mb-3">
+            <label for="formGroupExampleInput"></label>
+            {{ form.text|add_class:"text"}}
+        <div>
+            <input class="button div" type="submit" value="追加する →">
+        </div>
+        </form>
+    </form>
+    <a class="back" href="{% url 'spdiary:list'  %}"><span class="yohaku1">戻る →</span></a>
+{% endblock %}    

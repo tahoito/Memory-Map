@@ -1,0 +1,116 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    @media screen and (-webkit-min-device-pixel-ratio:0){
+    .date{/*日付ボックス*/
+        width: 250px;
+        min-height: 46px;
+        background-color: #b8f7c7;
+        font-size: 18px;
+        font-family: monospace;
+        color: #000000 ;
+        line-height: 42px;
+        border: none;
+        border-radius: 20px;
+        position: absolute;
+        left: 10%;
+        top: 15%;
+    }
+    .yohaku{
+        margin:0px 20px;
+    }
+    .text-box{/*背景のボックス*/
+        background-color: #b8f7c7;
+        position: absolute;
+        left:10%;
+        top: 40%;
+        width: 650px;
+        height: 300px;
+        border-radius: 20px;
+    }
+    .title{/*タイトル*/
+        position:absolute;
+        padding-top:20%; 
+        left:13%;
+        color:rgb(0, 0, 0);
+        font-size:25px;
+        z-index:999;
+        font-family: monospace;
+    }
+    .create{/*編集ボタン*/
+        width: 170px;
+        min-height: 46px;
+        background-color: #b8f7c7;
+        font-size: 18px;
+        font-family: monospace;
+        line-height: 38px;
+        border: none;
+        border-radius: 20px;
+        position: absolute;
+        left: 70%;
+        bottom: 35%;
+    }
+    .delete{/*削除ボタン*/
+        width: 170px;
+        min-height: 46px;
+        background-color: #b8f7c7;
+        font-size: 18px;
+        font-family: monospace;
+        line-height: 38px;
+        border: none;
+        border-radius: 20px;
+        position: absolute;
+        left: 70%;
+        bottom: 25%;
+    }    
+    .yohaku1{
+        margin:0px 40px;
+    }
+    .text{/*内容*/
+        position:absolute;
+        padding-top:25%; 
+        left:15%;
+        color:rgb(0, 0, 0);
+        font-size:18px;
+        z-index:999;
+        font-family: monospace;
+        width: 30em;
+    }
+    .tag{
+        line-height: 30px;
+        position:absolute;
+        padding-top:10.9%; 
+        left:12%;
+        color:rgb(0, 0, 0);
+        font-size:20px;
+        z-index:999;
+        font-family: monospace;
+        width: 30em;
+    }
+    .tag-box{
+        background-color: #b8f7c7;
+        position: absolute;
+        left:10%;
+        top: 28%;
+        width: 400px;
+        height: 50px;
+        border-radius: 20px;
+
+    }
+}
+</style>
+
+<div class="text-box"></div>
+<div class="tag-box"></div>
+<div class="date"><span class="yohaku">日付：{{ diary.date|date:" Y年m月d日" }}</span></div> 
+<div class="title"><u>{{ diary.title }}</u></div>
+<div class="text">{{ diary.text }}</div>
+<div class="tag">タグ：{{ diary.tagname }}</div>
+<a class="create" href="{% url 'spdiary:update' diary.id %}"><span class="yohaku1">編集 →</span></a>
+<!--<a class="delete" href="{% url 'spdiary:delete' diary.id %}"><span class="yohaku1">削除 →</span></a>-->
+<button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#deleteModal-{{diary.pk}}">削除する</button>
+                            {% include 'delete.html' %}
+</body>
+</html>
+{% endblock %}
