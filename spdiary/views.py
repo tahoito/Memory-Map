@@ -26,7 +26,7 @@ class SignupPage(generic.CreateView):
 
 
 class DiaryCreateView(LoginRequiredMixin,generic.CreateView):
-    template_name = 'create.html'
+    template_name = 'diary/create.html'
     #form_class = DiaryForm
     model = Diary
     fields = ('date','title','text','tagname')
@@ -81,7 +81,7 @@ class DiaryCreateView(LoginRequiredMixin,generic.CreateView):
  
 
 class DiaryListView(LoginRequiredMixin,generic.ListView):
-    template_name = 'list.html'
+    template_name = 'diary/list.html'
     model = Diary
 
     #def get_queryset(self):
@@ -106,11 +106,11 @@ class DiaryListView(LoginRequiredMixin,generic.ListView):
 
 
 class DiaryDetailView(generic.DetailView):
-    template_name = 'detail.html'
+    template_name = 'diary/detail.html'
     model = Diary    
 
 class DiaryUpdateView(LoginRequiredMixin,generic.UpdateView):
-    template_name = 'update.html'
+    template_name = 'diary/update.html'
     model = Diary
     fields = ('date','title','text','tagname')
     success_url = reverse_lazy('spdiary:list')
@@ -122,7 +122,7 @@ class DiaryUpdateView(LoginRequiredMixin,generic.UpdateView):
         return super().form_valid(form)
     
 class DiaryDeleteView(generic.DeleteView):
-    template_name = 'delete.html'
+    template_name = 'diary/delete.html'
     model = Diary
     success_url = reverse_lazy('spdiary:list')  
 
