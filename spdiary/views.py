@@ -240,6 +240,10 @@ class Createpage(generic.CreateView):
         todo_object.save()
         return super().form_valid(form)
 
+    #def addTodo(request):
+        #todo = Todo(text=request.POST['memo'])
+        #todo.save()
+        #return redirect('/todos')
 
 
 class Updatepage(generic.UpdateView):

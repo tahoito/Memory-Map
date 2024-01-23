@@ -4,15 +4,16 @@
     .createpage{/*編集ボタン*/
     width: 210px;
     min-height: 46px;
-    background-color: #C6FD9B;
+    background-color: #bbf9c9;
     font-size: 18px;
     font-family: monospace;
     line-height: 38px;
     border: none;
+    color:rgb(237, 18, 18);
     border-radius: 20px;
     position: absolute;
-    left: 75%;
-    top: 40%;    
+    left: 65%;
+    top: 25%;    
     }
     .homepage{/*ホームボタン*/
     width: 210px;
@@ -24,8 +25,8 @@
     border: none;
     border-radius: 20px;
     position: absolute;
-    left: 75%;
-    top: 12%;    
+    left: 65%;
+    top: 14%;    
     }
     .yohaku{
         margin:4px 40px;
@@ -37,11 +38,11 @@
 
     input[name="query" ]{
     background-color: #ffffff;;
-    left:60%;
+    left:65%;
     position: absolute;
     font-size:21px;
     border-radius: 10px;
-    top:20%;
+    top:38%;
   }
 
     .button{/*検索フォーム*/
@@ -57,8 +58,8 @@
     transition: 0.3s; /* ホバーの変化を滑らかに */
     position: absolute;
     border-radius: 10px; 
-    top:17%;
-    left:83%;
+    top:35%;
+    left:88%;
 
   }
   .button:hover {/*検索ボタン*/
@@ -113,6 +114,6 @@
         </div>            
     </ul>
 <a class="createpage" href="{% url 'spdiary:createpage' %}"><span class="yohaku">新規作成 →</span></a>
-<!--<a class="homepage" href="{% url 'spdiary:list' %}"><span class="yohaku">日記 →</span></a>-->
+<a class="homepage" href="{% url 'spdiary:list' %}"><span class="yohaku">日記 →</span></a>
 {% endblock %}
 </body>
