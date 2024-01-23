@@ -13,7 +13,7 @@
 ### ☘️ 2. "Memory Map"をどうやって使うのか<br>
  1. GitHubからダウンロードする<br>
  2. VScodeでこのファイルを開く<br>
- 3. Downloadの場所から"/memo"の次に"/diary"となるまで移動する<br>
+ 3. VScodeの上にある”ターミナルを実行する”を開く<br>
  4. 下記のコマンドを入力<br>
 
     　-- pip3 install django<br>
@@ -35,7 +35,7 @@
 ### ☘️ 2. How to use "Memory Map" <br>
  1. Download on GitHub<br>
  2. Open this code on V.S code<br>
- 3. Move to /diary<br>
+ 3. You have to open "run terminal" in VScode<br>
  4. you have to type this command<br>
  
       -- pip3 install django<br>
