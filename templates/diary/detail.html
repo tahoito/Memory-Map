@@ -110,7 +110,7 @@
 <a class="create" href="{% url 'spdiary:update' diary.id %}"><span class="yohaku1">編集 →</span></a>
 <!--<a class="delete" href="{% url 'spdiary:delete' diary.id %}"><span class="yohaku1">削除 →</span></a>-->
 <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#deleteModal-{{diary.pk}}">削除する</button>
-                            {% include 'delete.html' %}
+                            {% include 'diary/delete.html' %}
 </body>
 </html>
 {% endblock %}
