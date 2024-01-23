@@ -108,6 +108,7 @@
   </div>
 
   <div class="container">
+    {% csrf_token%}
     <form action="" method="get">
       <input name="tag" value="{{ request.GET.tag }}" type="text" placeholder="#のワードを検索"/>
       <button type="submit"class="button">検索する</button>
