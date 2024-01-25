@@ -17,6 +17,9 @@
  4. 下記のコマンドを入力<br>
 
     　-- pip3 install django<br>
+    　-- pip3 install django-widget-tweaks<br>
+    　-- pip3 install django_bootstrap5<br>
+    　-- pip3 install Pillow<br>
     　-- python3 manage.py runserver<br>
 
  ### 🌟このwebアプリケーションを楽しく使えますように！🌟    
@@ -36,9 +39,12 @@
  1. Download on GitHub<br>
  2. Open this code on V.S code<br>
  3. You have to open "run terminal" in VScode<br>
- 4. you have to type this command<br>
+ 4. you have to type these command<br>
  
       -- pip3 install django<br>
+      -- pip3 install django-widget-tweaks<br>
+      -- pip3 install django_bootstrap5<br>
+      -- pip3 install Pillow<br>
       -- python3 manage.py runserver<br>
 
 ### 🌟I hope you can use this web application 🌟  
