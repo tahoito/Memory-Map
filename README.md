@@ -9,6 +9,11 @@
   . この機能があることで過去の思い出を振り返れます<br>
   . todoリストと写真はタイトルで調べると過去のものを振り返ることができます<br>
 
+  -注意点-<br>
+  ・ #は半角でお願いします<br>
+  ・ タグを複数する際はスペースを半角でお願いします<br>
+  ・ タグはまだ更新機能をつけてないので、編集しても反応しません（＝タグは編集しないでください）<br>
+
 
 ### ☘️ 2. "Memory Map"をどうやって使うのか<br>
  1. GitHubからダウンロードする<br>
@@ -33,6 +38,9 @@
   ・ It has a list so, you can look back on past diaries<br>
   ・ If you write #'word' in your diary, you can search about past daiaries<br>
   ・ Todo and Photo also can look back on the past by searching by title.<br>
+
+  -important points-<br>
+  ・ #words do not have the update function yet, so please do not edit them...
 
 
 ### ☘️ 2. How to use "Memory Map" <br>
