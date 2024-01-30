@@ -77,7 +77,7 @@
     line-height: 38px;
     min-height: 48px;
   }
-  .photo{
+  .photo{/*写真ボタン*/
     border: none;
     position:absolute;
     background-color:#bbf9c9;
@@ -124,6 +124,6 @@
     </ul>
   </div>
   <a class="create" href="{% url 'spdiary:create' %}"><span class="yohaku">新規作成 →</span></a>
-  <a class="photo" href="{% url 'spdiary:image' %}"><span class="yohaku">写真追加 →</span></a>
+  <a class="photo" href="{% url 'spdiary:Image' %}"><span class="yohaku">写真追加 →</span></a>
 </body>
 {% endblock %}

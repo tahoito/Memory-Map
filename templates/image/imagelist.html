@@ -99,7 +99,7 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title"><a href="{% url 'spdiary:imagedetail' image.id %}">{{ image.name }}</a></h5>
+          <h5 class="card-title"><a href="{% url 'spdiary:ImageDetail' image.id %}">{{ image.name }}</a></h5>
           <p class="card-text"><small class="text-body-secondary">{{ image.today|date:"m月d日"}}</small></p>
           <h6 class="card-text">{{ image.memo }}</h6>
         </div>
@@ -109,6 +109,6 @@
   {% endfor %}
 
 <a class="list" href="{% url 'spdiary:list' %}"><span class="yohaku">日記作成 →</span></a>
-<a class="create" href="{% url 'spdiary:image' %}"><span class="yohaku">新規作成　→</span></a>
+<a class="create" href="{% url 'spdiary:Image' %}"><span class="yohaku">新規作成　→</span></a>
 </body>
 {% endblock %}

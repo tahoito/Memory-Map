@@ -16,9 +16,8 @@ from .forms import ImageForm
 from django.shortcuts import render, get_object_or_404
 
 
-#日記を書く
 
-
+#Diary
 class SignupPage(generic.CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('spdiary:login')
@@ -27,19 +26,18 @@ class SignupPage(generic.CreateView):
 
 class DiaryCreateView(LoginRequiredMixin,generic.CreateView):
     template_name = 'diary/create.html'
-    #form_class = DiaryForm
     model = Diary
     fields = ('date','title','text','tagname')
     success_url = reverse_lazy('spdiary:list')#createが終わったらcompleteの方へ移動する
 
 
     def form_valid(self, form):
-    # 既存のコード
+    # userのコード
         diary_object = form.save(commit=False)
         diary_object.user = self.request.user  
         #diary_object.save()
 
-    # 新しいコード
+    # ハッシュタグ機能
         diary = Diary(
             title=form.cleaned_data["title"], text=form.cleaned_data["text"], tagname=form.cleaned_data["tagname"],
             user=self.request.user
@@ -57,40 +55,11 @@ class DiaryCreateView(LoginRequiredMixin,generic.CreateView):
         return redirect('spdiary:list')
 
 
-
-    #def form_valid(self, form):
-        #diary_object = form.save(commit=False)
-        #diary_object.user = self.request.user  
-        #diary_object.save()
-        #return super().form_valid(form)
-
-
-    #def form_valid(self, form):
-        #diary = Diary(
-            #title=form.cleaned_data["title"], text=form.cleaned_data["text"],tagname=form.cleaned_data["tagname"])
-        #diary.save()
-        #words = form.cleaned_data["tagname"].split()
-        #for word in words:
-            #if word[0] == "#":
-                #if Tag.objects.filter(name=word[1:]).exists():
-                    #tag = Tag.objects.get(name=word[1:])
-                #else:
-                    #tag = Tag.objects.create(name=word[1:])
-                #diary.tag.add(tag)
-        #return redirect('spdiary:list')  
- 
-
 class DiaryListView(LoginRequiredMixin,generic.ListView):
     template_name = 'diary/list.html'
     model = Diary
 
-    #def get_queryset(self):
-        #if self.request.user.is_active:
-            #return Diary.objects.filter(user=self.request.user)
-        #else:
-            #return Diary.objects.none()
-        
-
+    #ハッシュタグ機能 
     def get_queryset(self):
         tag = self.request.GET.get('tag')
 
@@ -126,11 +95,12 @@ class DiaryDeleteView(generic.DeleteView):
     model = Diary
     success_url = reverse_lazy('spdiary:list')  
 
+#Image
 class ImageCreateView(generic.CreateView):
     model = Image
     fields = ('name','image','memo')
-    template_name = 'image/image.html'
-    success_url = reverse_lazy('spdiary:imagelist') 
+    template_name = 'image/Image.html'
+    success_url = reverse_lazy('spdiary:ImageList') 
 
     def index(request):
         params = {
@@ -146,7 +116,7 @@ class ImageCreateView(generic.CreateView):
  
                 params['id'] = upload_image.id
  
-        return render(request, 'spdiary:imagelist.html', params)
+        return render(request, 'spdiary:ImageList.html', params)
     
     def form_valid(self, form):
         image_object = form.save(commit=False)
@@ -157,14 +127,9 @@ class ImageCreateView(generic.CreateView):
 
 class ImageListView(generic.ListView):
     model = Image
-    template_name = 'image/imagelist.html'
+    template_name = 'Image/ImageList.html'
 
-    #def get_queryset(self):
-        #if self.request.user.is_active:
-            #return Image.objects.filter(user=self.request.user)
-        #else:
-            #return Image.objects.none()
-        
+
     def get_queryset(self):
         query = self.request.GET.get('query')
 
@@ -181,7 +146,7 @@ class ImageListView(generic.ListView):
 class ImageDetailView(generic.DetailView):
     model = Image
     queryset = Image.objects.all()
-    template_name = 'image/imagedetail.html'  
+    template_name = 'image/ImageDetail.html'  
 
     def preview(request, image_id=0):
  
@@ -193,27 +158,19 @@ class ImageDetailView(generic.DetailView):
             'url': upload_image.image.url
         }
  
-        return render(request, 'image/imagedetail.html', params)
+        return render(request, 'image/ImageDetail.html', params)
     
 class ImageDeleteView(generic.DeleteView):
     model = Image
-    template_name = 'image/imagedelete.html'
-    success_url = reverse_lazy('spdiary:imagelist')
+    template_name = 'image/ImageDelete.html'
+    success_url = reverse_lazy('spdiary:ImageList')
 
-#Todoリスト
-class Listpage(generic.ListView):
+#Todo
+class ListPage(generic.ListView):
     model = Todo
-    template_name = 'todo/listpage.html'
+    template_name = 'todo/ListPage.html'
 
-    #def get_queryset(self):
-        #return Todo.objects.order_by('-id')
-    
-    #def get_queryset(self):
-        #if self.request.user.is_active:
-            #return Todo.objects.filter(user=self.request.user)
-        #else:
-            #return Todo.objects.none()
-    
+    #user機能
     def get_queryset(self):
         query = self.request.GET.get('query')
 
@@ -228,32 +185,28 @@ class Listpage(generic.ListView):
     
 
 
-class Createpage(generic.CreateView):
-    template_name = 'todo/createpage.html'
+class CreatePage(generic.CreateView):
+    template_name = 'todo/CreatePage.html'
     form_class = TodoForm
-    success_url = reverse_lazy('spdiary:listpage')  
+    success_url = reverse_lazy('spdiary:ListPage')  
 
-
+    #user機能
     def form_valid(self, form):
         todo_object = form.save(commit=False)
         todo_object.user = self.request.user  
         todo_object.save()
         return super().form_valid(form)
 
-    #def addTodo(request):
-        #todo = Todo(text=request.POST['memo'])
-        #todo.save()
-        #return redirect('/todos')
 
 
-class Updatepage(generic.UpdateView):
+class UpdatePage(generic.UpdateView):
     model = Todo
-    template_name = 'todo/updatepage.html'
+    template_name = 'todo/UpdatePage.html'
     fields = ('time','memo')
-    success_url = reverse_lazy('spdiary:listpage')  
+    success_url = reverse_lazy('spdiary:ListPage')  
 
-class Deletepage(generic.DeleteView):
+class DeletePage(generic.DeleteView):
     model = Todo
-    template_name = 'todo/deletepage.html'
+    template_name = 'todo/DeletePage.html'
     fields = ('time','memo')
-    success_url = reverse_lazy('spdiary:listpage')  
+    success_url = reverse_lazy('spdiary:ListPage')  

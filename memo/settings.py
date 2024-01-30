@@ -133,7 +133,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'spdiary:list'
 LOGOUT_REDIRECT_URL = 'spdiary:login'
 CREATE_REDIRECT_URL = 'spdiary:list'
-IMAGE_REDIRECT_URL = 'spdiary:imagelist'
+IMAGE_REDIRECT_URL = 'spdiary:ImageList'
 
 MEDIA_URL = '/media/'#画像をアップロードするため
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

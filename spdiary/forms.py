@@ -6,8 +6,6 @@ from .models import Image
 class DiaryForm(forms.ModelForm):
     class Meta:
         model = Diary
-        #image = forms.ImageField(label='イメージ画像', required=False) 
-
         fields = ('date', 'title', 'text','tagname')
         widgets = {#辞書型のデータ
             'date': forms.DateInput(attrs={'class': 'form-control'}),
@@ -22,12 +20,9 @@ class TodoForm(forms.ModelForm):
         widgets = {
             'time': forms.DateInput(attrs={'class':'form-control'}),
             'memo': forms.DateInput(attrs={'class':'form-control'}),
-
-        }
-   
+        }        
 
 class ImageForm(forms.ModelForm):
     class Meta:
         model = Image
         fields = ('image','name','memo','today')
-

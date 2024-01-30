@@ -24,7 +24,7 @@
                 </p>
                 <p>
                     <div class="div">
-                        <div class="password-font">&nbsp;PASSWARD：</div>
+                        <div class="password-font">&nbsp;PASSWORD：</div>
                         <input class="password" type="password" name="{{ form.password.html_name }}" autofocus="" autocapitalize="none" autocomplete="current-password" required="" id="{{ form.password.id_for_label }}">
 
                     </div>
@@ -41,9 +41,6 @@
                     <input class="login-button div" type="submit" value="LOGIN →">
                 </div>
             </form>
-        <!--{% if form.errors %}
-            <p>Please enter a correct username and password. Note that both fields may be case-sensitive.</p>
-        {% endif %} -->
         </div>
         <div>
             <a class="signup" href="{% url 'spdiary:signup' %}"><span class="yohaku">CREATE ACCOUNT →</span></a>

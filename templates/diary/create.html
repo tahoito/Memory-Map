@@ -3,7 +3,7 @@
 {% block content %}
 
 <style>
-    .button{
+    .button{/*submit*/
         width: 170px;
         min-height: 46px;
         background-color: #b8f7c7;
@@ -17,7 +17,7 @@
         left: 70%;
         bottom: 35%;
     }
-    .back{
+    .back{/*戻るボタン*/
         width: 170px;
         min-height: 46px;
         background-color: #b8f7c7;
@@ -45,13 +45,13 @@
         top: 15%;
         font-size: 20px;
     }
-    .tag-box{
+    .tag-box{/*テキスト本文*/
         color: #000000;
         position: absolute;
         left:10%;
         top: 26%;
     }
-    .date-box{
+    .date-box{/*日付*/
         position: absolute;
         color:#000000;
         left:10%;
@@ -69,7 +69,7 @@
         left:10%;
         top: 37%;
     }
-    #id_tagname{
+    #id_tagname{/*タグボックス*/
         background-color:#b8f7c7;
         width: 400px;
         position: absolute;
@@ -80,7 +80,7 @@
         top: 30%;
         font-size: 20px;
     }
-    #id_title{
+    #id_title{/*タイトル*/
         background-color:#b8f7c7;
         width: 450px;
         position: absolute;
@@ -91,16 +91,16 @@
         top: 40%;
         font-size: 20px;
     }
-    #id_text{
+    #id_text{/*テキスト*/
         background-color:#b8f7c7;
         width: 600px;
         position: absolute;
-        min-height: 250px;
+        min-height: 230px;
         border: none;
         border-radius: 20px;
         left: 10%;
         top: 53%;
-        font-size: 15px;
+        font-size: 17px;
     }
 </style>
     <div class="date"></div>
@@ -110,22 +110,7 @@
     <div class="text-box">日記</div>
     <form method="post">    
         {% csrf_token %}
-        <!--<div class="form-group">
-            <label>{{ form.date.label }}</label>
-            {% render_field form.date class+="form-control w-25 mb-4" %}
-        </div>
-        <div class="form-group">
-            <label>{{ form.title.label }}</label>
-            {% render_field form.title class+="form-control w-25 mb-4" %}
-        </div>
-        <div class="form-group">
-            <label>{{ form.tagname.label }}</label>
-            {% render_field form.tagname class+="form-control w-25 mb-4" %}
-        </div>
-        <div class="form-group">
-            <label>{{ form.text.label }}</label>
-            {% render_field form.text class+="form-control w-50 mb-4" %}
-        </div>-->
+  
         <div class="form-group mb-3">
             <label for="formGroupExampleInput"></label>
             {{ form.date|add_class:"date"}}

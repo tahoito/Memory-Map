@@ -10,4 +10,5 @@ admin.site.register(Tag)
 admin.site.register(Image)
 
 
-# Register your models here.
+
+

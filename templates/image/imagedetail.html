@@ -1,24 +1,24 @@
 {% extends './base.html' %}
 {% block content %}
 <style>
-    .title{
+    .title{/*タイトル*/
         left:20%;
         top:23%;
         position: absolute;
         font-size: 30px;
     }
-    .photo{
+    .photo{/*写真*/
         left:60%;
         top:20%;
         position: absolute;
     }
-    .today{
+    .today{/*日付*/
         left:17%;
         top:43%;
         position: absolute;
         font-size: 20px;
     }
-    .big{
+    .big{/*ボックス*/
         background-color: #b8f7c7;
         position: absolute;
         left:15%;
@@ -27,7 +27,7 @@
         height: 80px;
         border-radius: 20px;
     }
-    .box{
+    .box{/*メモ*/
         background-color: #b8f7c7;
         position: absolute;
         left:15%;
@@ -37,7 +37,7 @@
         border-radius: 20px;
 
     }
-    .memo{
+    .memo{/*メモ本文*/
         left:17%;
         top:50%;
         position: absolute;
@@ -70,7 +70,7 @@
         </div>
     </div>
     <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#deleteModal-{{image.id}}">削除する</button>
-                            {% include 'image/imagedelete.html' %}
+                            {% include 'image/ImageDelete.html' %}
 </body>
 
 {% endblock %}

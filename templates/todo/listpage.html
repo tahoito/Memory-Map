@@ -104,7 +104,7 @@
                           </div></th>
                         <th>{{ item.time|date:" m月d日" }}</th>
                         <th>{{ item.memo }}</th>
-                        <th><a href="{% url 'spdiary:updatepage' item.pk %}">編集する</a></th>
+                        <th><a href="{% url 'spdiary:UpdatePage' item.pk %}">編集する</a></th>
                         <th><button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal-{{item.pk}}">削除する</button>
                             {% include 'todo/deletepage.html' %}</th>
                     </tr>
@@ -114,7 +114,7 @@
             </table>
         </div>            
     </ul>
-<a class="createpage" href="{% url 'spdiary:createpage' %}"><span class="yohaku">新規作成 →</span></a>
+<a class="createpage" href="{% url 'spdiary:CreatePage' %}"><span class="yohaku">新規作成 →</span></a>
 <a class="homepage" href="{% url 'spdiary:list' %}"><span class="yohaku">日記 →</span></a>
 {% endblock %}
 </body>

@@ -28,7 +28,7 @@
                 <p>「{{ item.memo }}」を削除してもよろしいですか ?</p>
             </div>
             <div class="modal-footer">
-                <form method="POST" action="{% url 'spdiary:deletepage' item.pk %}">{% csrf_token %}
+                <form method="POST" action="{% url 'spdiary:DeletePage' item.pk %}">{% csrf_token %}
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">閉じる</button>
                     <button type="submit" class="btn btn-outline-success">削除</button>
                 </form>

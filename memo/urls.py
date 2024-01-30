@@ -21,6 +21,8 @@ from django.views.generic import RedirectView
 from django.conf.urls.static import static # 追加
 from django.conf import settings # 追加
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('spdiary/',include('spdiary.urls')),
