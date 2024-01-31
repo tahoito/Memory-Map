@@ -27,7 +27,8 @@
     　-- pip3 install Pillow<br>
     　-- python3 manage.py runserver<br>
 
- ### 🌟このwebアプリケーションを楽しく使えますように！🌟    
+ ### 🌟このwebアプリケーションを楽しく使えますように！🌟 
+ #####  🌿Googleスライド:https://docs.google.com/presentation/d/1gPaM15pQlNL3suRDQTatYQ9JJ8-a_lwmiDSY2KTGavg/edit#slide=id.p<br>
 ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 ### 🍀This web application has two functions: Diary and Todo list <br>   
